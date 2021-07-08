@@ -196,8 +196,8 @@ public class ProcessPayrollTotals {
 		System.out.printf("\nPayroll Summary for: %s\n"
 				+ "SSN (Last 4 Digits): %s", name, social);
 		printSeperator('-', guiWidth);
-		System.out.printf("\nHours Worked:             %9.2f\n\n"
-				+ "Pay Rate:                $%9.2f\n"
+		System.out.printf("\nHours Worked:             %9.2f\n"
+				+ "Pay Rate:                $%9.2f\n\n"
 				+ "Gross Pay:               $%9.2f\n"
 				+ "Federal Withholding:     $%9.2f\n"
 				+ "State Withholding:       $%9.2f\n"
