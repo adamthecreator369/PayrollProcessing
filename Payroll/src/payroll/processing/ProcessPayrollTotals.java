@@ -17,6 +17,7 @@ public class ProcessPayrollTotals {
 		double hourlyPay = -1, hoursWorked = -1;
 		// Used to determine if doubles contain a decimal point.
 		boolean containsPoint = false;
+		int guiWidth = 34;
 		// Repeatedly request employee name until a name is entered.
 		while (input.equals("")) {
 			System.out.println("Enter your first and last name: ");
@@ -187,14 +188,14 @@ public class ProcessPayrollTotals {
 		double stateTax = grossPay * 0.05;
 		
 		// Format and Output Payroll Information to Screen
-	    // Doubles are formatted to a precision of 2 decimal points
-	    // Totals in output are filled with preceding blank spaces to a width of 9.
-		printSeperator('=');
+	        // Doubles are formatted to a precision of 2 decimal points
+	        // Totals in output are filled with preceding blank spaces to a width of 9.
+		printSeperator('=', guiWidth);
 		System.out.printf("\n%" + 10 + "s%s", " ", "Payroll Summary");
 		printSeperator('=');
 		System.out.printf("\nPayroll Summary for: %s\n"
 				+ "SSN (Last 4 Digits): %s", name, social);
-		printSeperator('-');
+		printSeperator('-', guiWidth);
 		System.out.printf("\nHours Worked:             %9.2f\n\n"
 				+ "Pay Rate:                $%9.2f\n"
 				+ "Gross Pay:               $%9.2f\n"
@@ -203,8 +204,7 @@ public class ProcessPayrollTotals {
 				+ "-----------------------------------\n"
 				+ "Net Pay:                 $%9.2f", hoursWorked, hourlyPay, 
 				grossPay, fedTax, stateTax, (grossPay - fedTax - stateTax));
-		//printSeperator('-');
-		printSeperator('=');
+		printSeperator('=', guiWidth);
 		// Close the scanner
 		scanner.close();
 	}
@@ -216,10 +216,9 @@ public class ProcessPayrollTotals {
 	 * @param c: the character repeatedly printed to create
 	 *           the separator.
 	 */
-	private static void printSeperator(char c) {
-		int guiWidth = 35;
+	private static void printSeperator(char c, int guiWidth) {
 		System.out.println();
-		for (int i=0; i<guiWidth; i++) { System.out.print(c); }
+		for (int i=0; i<=guiWidth; i++) { System.out.print(c); }
 	}
 	
 }
