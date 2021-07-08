@@ -188,11 +188,11 @@ public class ProcessPayrollTotals {
 		double stateTax = grossPay * 0.05;
 		
 		// Format and Output Payroll Information to Screen
-	        // Doubles are formatted to a precision of 2 decimal points
-	        // Totals in output are filled with preceding blank spaces to a width of 9.
+        // Doubles are formatted to a precision of 2 decimal points
+        // Totals in output are filled with preceding blank spaces to a width of 9.
 		printSeperator('=', guiWidth);
 		System.out.printf("\n%" + 10 + "s%s", " ", "Payroll Summary");
-		printSeperator('=');
+		printSeperator('=', guiWidth);
 		System.out.printf("\nPayroll Summary for: %s\n"
 				+ "SSN (Last 4 Digits): %s", name, social);
 		printSeperator('-', guiWidth);
